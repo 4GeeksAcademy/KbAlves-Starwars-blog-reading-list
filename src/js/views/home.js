@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
-export const Home = () => (
+export const Home = () =>{ 
+const { store, actions } = useContext(Context);
+console.log(store.allTheCaracters, "allTheCaracters")
+return (
+
 	<div className="text-center mt-5">
 		<h1>Hello Rigo!</h1>
 		<p>
@@ -13,3 +18,4 @@ export const Home = () => (
 		</a>
 	</div>
 );
+}
