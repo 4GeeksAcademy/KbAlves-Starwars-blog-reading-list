@@ -5,17 +5,26 @@ import "../../styles/home.css";
 
 export const Home = () =>{ 
 const { store, actions } = useContext(Context);
-console.log(store.allTheCaracters, "allTheCaracters")
+console.log(store.allTheCharacters, "allTheCharacters")
 return (
+  <div>
+{store.allTheCharacters.map(
+  (item,index)=> {
 
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
+    return(
+      <div class="card" style={{width: "18rem"}}>
+        <img src={item?.image} class="card-img-top" alt="..."/>
+        <div class="card-body">
+        <h5 class="card-title">{item?.name}</h5>
+        <p class="card-text">Gender: {item?.gender}</p>
+        <p class="card-text">Species: {item?.species}</p>
+        <p class="card-text">Staus: {item?.status}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    );
+  }
+)}
+</div>
 );
 }
