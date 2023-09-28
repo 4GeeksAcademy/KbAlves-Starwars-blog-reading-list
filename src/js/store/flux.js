@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			allTheCharacters:[],
+				AllTheLocation:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -28,6 +29,17 @@ const getState = ({ getStore, getActions, setStore }) => {
                      console.error(`Error fetching data for: ${error.message}`)
                     }) 
 			},
+
+			getAllTheLocation: ()=>{
+				fetch("https://rickandmortyapi.com/api/location")
+				.then((received)=> received.json())
+                .then((data)=> setStore({AllTheLocation:data.results }))
+                    .catch ((error)=>{
+                     console.error(`Error fetching data for: ${error.message}`)
+                    }) 
+			},
+
+
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
