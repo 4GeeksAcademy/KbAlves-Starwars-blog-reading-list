@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImage from "../../img/rigo-baby.jpg";
+
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 export const Characters = () =>{ 
 const { store, actions } = useContext(Context);
-console.log(store.allTheCharacters, "allTheCharacters")
+
 return (
   <div class = "images"> 
   <div className ="cards d-flex ">
-{store.allTheCharacters.map(
+{store.AllTheCharacters.map(
   (item,index)=> {
 
     return(
@@ -20,10 +20,13 @@ return (
         <p class="card-text">Gender: {item?.gender}</p>
         <p class="card-text">Species: {item?.species}</p>
         <p class="card-text">Staus: {item?.status}</p>
-        <Link to={"/singleCharacter/" + (index+1)}>
+        <Link to={"/singleCharacter/" + (index)}>
         <a href="#" class="btn btn-primary">Learn more</a>
-		</Link>
-
+		    </Link>
+        <button onClick={()=>{
+          actions.getFavorite(item?.name)
+          console.log(store.Favorites, "Favorites***")
+          }}>Favorite</button>
         </div>
       </div>
     );

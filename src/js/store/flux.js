@@ -1,8 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			allTheCharacters:[],
-				AllTheLocation:[],
+			AllTheCharacters:[],
+				AllTheEpisode:[],
+					AllTheLocation:[],
+						Favorites:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -24,12 +26,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getAllTheCharacters: ()=>{
 				fetch("https://rickandmortyapi.com/api/character")
 				.then((received)=> received.json())
-                .then((data)=> setStore({allTheCharacters:data.results }))
+                .then((data)=> setStore({AllTheCharacters:data.results }))
                     .catch ((error)=>{
                      console.error(`Error fetching data for: ${error.message}`)
                     }) 
 			},
-
+			getAllTheEpisode: ()=>{
+				fetch("https://rickandmortyapi.com/api/episode")
+				.then((received)=> received.json())
+                .then((data)=> setStore({AllTheEpisode:data.results }))
+                    .catch ((error)=>{
+                     console.error(`Error fetching data for: ${error.message}`)
+                    }) 
+			},
 			getAllTheLocation: ()=>{
 				fetch("https://rickandmortyapi.com/api/location")
 				.then((received)=> received.json())
@@ -38,8 +47,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                      console.error(`Error fetching data for: ${error.message}`)
                     }) 
 			},
-
-
+			getFavorite: (name)=>{
+				const store = getStore();
+				setStore({Favorites:[...store.Favorites,name]})
+			},
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))

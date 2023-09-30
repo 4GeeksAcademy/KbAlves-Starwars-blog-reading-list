@@ -23,6 +23,7 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			state.actions.getAllTheCharacters();
+			state.actions.getAllTheEpisode();
 			state.actions.getAllTheLocation();
 		}, []);
 
