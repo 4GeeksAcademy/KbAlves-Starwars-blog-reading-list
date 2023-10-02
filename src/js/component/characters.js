@@ -7,11 +7,11 @@ export const Characters = () =>{
 const { store, actions } = useContext(Context);
 
 return (
-  <div class = "images"> 
-  <div className ="cards d-flex ">
+  <div><div><h2>Characters</h2></div>
+  <div class = "images">
+  <div className ="cards d-flex "> 
 {store.AllTheCharacters.map(
   (item,index)=> {
-
     return(
       <div class="card d-flex m3" style={{width: "18rem"}}>
         <img src={item?.image} class="card-img-top" alt="..."/>
@@ -26,13 +26,17 @@ return (
         <button onClick={()=>{
           actions.getFavorite(item?.name)
           console.log(store.Favorites, "Favorites***")
-          }}>Favorite</button>
+          }}>
+            <i class="far fa-heart"></i>
+          </button>
         </div>
       </div>
+      
     );
   }
 )}
 </div>
+  </div>
 </div>
 );
 }

@@ -22,6 +22,12 @@ return (
         <Link to={"/singleEpisode/" + (index)}>
         <a href="#" class="btn btn-primary">Learn more</a>
 		    </Link>
+        <button onClick={()=>{
+          actions.getFavorite(item?.name)
+          console.log(store.Favorites, "Favorites***")
+          }}>
+          <i class="far fa-heart"></i>
+        </button>
         </div>
       </div>
     );

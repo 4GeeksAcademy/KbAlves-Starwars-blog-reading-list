@@ -7,7 +7,7 @@ export const Location = () =>{
 const { store, actions } = useContext(Context);
 console.log(store.AllTheLocation, "allTheLocation")
 return (
-  <div class = "images"> 
+  <div class = "images">
   <div className ="cards d-flex ">
 {store.AllTheLocation.map(
   (item,index)=> {
@@ -22,7 +22,12 @@ return (
         <Link to={"/singleLocation/" + (index)}>
         <a href="#" class="btn btn-primary">Learn more</a>
 		    </Link>
-
+        <button onClick={()=>{
+          actions.getFavorite(item?.name)
+          console.log(store.Favorites, "Favorites***")
+          }}>
+          <i class="far fa-heart"></i>
+        </button>
         </div>
       </div>
     );
