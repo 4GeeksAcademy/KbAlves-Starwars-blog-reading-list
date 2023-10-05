@@ -4,6 +4,49 @@
     overflow-y: hidden;
     flex-wrap: nowrap;
 }
+.logo {
+  width: 60px;
+  height:60px;
+  margin-left: 50px;
+}
+.btn.btn-dark.dropdown-toggle {
+  margin-right: 100px;
+}
+
 .title{
     display:grid;
 }
+.photo {
+    display: flex;
+    align-items: center;
+  } 
+  .photo img {
+    width: 300px;
+    height:300px;
+    margin-right: 20px;
+  }
+  .photo a {
+    text-decoration: none;
+    color: blue;
+  }
+
+  .allInfo {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+  }
+  hr {
+    border: 1px solid  #c60b08;
+  }
+  
+
+  .allInfo div {
+    margin-bottom: 10px; /* Espaço entre os elementos na vertical */
+  }
+  .allData {
+    display: flex;
+    flex-direction:column;
+    margin: 10px; /* Espaço entre a linha horizontal e os dados */
+    align-items: center;
+    color: #c60b08;
+  }

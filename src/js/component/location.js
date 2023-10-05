@@ -7,6 +7,7 @@ export const Location = () =>{
 const { store, actions } = useContext(Context);
 console.log(store.AllTheLocation, "allTheLocation")
 return (
+<div><div><h2>Location</h2></div>
   <div class = "images">
   <div className ="cards d-flex ">
 {store.AllTheLocation.map(
@@ -34,6 +35,7 @@ return (
   }
 )}
 </div>
+  </div>
 </div>
 );
 }

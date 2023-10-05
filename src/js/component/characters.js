@@ -7,7 +7,7 @@ export const Characters = () =>{
 const { store, actions } = useContext(Context);
 
 return (
-  <div><div><h2>Characters</h2></div>
+<div><div><h2>Characters</h2></div>
   <div class = "images">
   <div className ="cards d-flex "> 
 {store.AllTheCharacters.map(
@@ -22,7 +22,7 @@ return (
         <p class="card-text">Staus: {item?.status}</p>
         <Link to={"/singleCharacter/" + (index)}>
         <a href="#" class="btn btn-primary">Learn more</a>
-		    </Link>
+        </Link>
         <button onClick={()=>{
           actions.getFavorite(item?.name)
           console.log(store.Favorites, "Favorites***")
