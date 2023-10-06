@@ -5,12 +5,9 @@ import "../../styles/home.css";
 
 export const SingleCharacter = () =>{ 
 const { store, actions } = useContext(Context);
-console.log(store.AllTheCharacters, "allTheCharacters")
 const params = useParams()
 let characterId = params.theid
-console.log(characterId,'THEID')
 
-console.log(store.AllTheCharacters[characterId],'***THEID')
 return (
   <div className="container">
     <div className="photo">

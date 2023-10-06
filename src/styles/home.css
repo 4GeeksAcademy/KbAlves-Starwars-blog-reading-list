@@ -95,10 +95,10 @@ body{
     width: 100%;
 }
 
-.test {
+.trash {
   position: absolute;
   right: 0;
-  margin-right: 10px;
+  margin-right: 6px;
   margin-top: 4px;
-  margin-left: 10px;
+  margin-left: 20px;
 }

@@ -5,7 +5,6 @@ import "../../styles/home.css";
 
 export const Episode = () =>{ 
 const { store, actions } = useContext(Context);
-console.log(store.AllTheEpisode, "allTheEpisode")
 return (
 <div className="allCard">
   <div><h2>Episode</h2></div>
@@ -25,7 +24,6 @@ return (
             <Link to={"/singleEpisode/" + (index)} className="btn btn-dark">Learn more</Link>
             <button className="black-button" onClick={() => {
               actions.getFavorite(item?.name);
-              console.log(store.Favorites, "Favorites***");
             }}>
               <i class="far fa-heart"></i>
             </button>

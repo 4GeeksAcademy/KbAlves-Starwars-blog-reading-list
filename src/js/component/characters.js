@@ -26,7 +26,6 @@ return (
           <Link to={"/singleCharacter/" + (index)} className="btn btn-dark">Learn more</Link>
           <button className="black-button" onClick={() => {
             actions.getFavorite(item?.name);
-            console.log(store.Favorites, "Favorites***");
           }}>
             <i class="far fa-heart"></i>
           </button>

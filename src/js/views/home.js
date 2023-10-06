@@ -8,7 +8,6 @@ import { Location } from "../component/location";
 
 export const Home = () =>{ 
 const { store, actions } = useContext(Context);
-console.log(store.AllTheCharacters, "allTheCharacters")
 return (
   <div>
     <Characters />
