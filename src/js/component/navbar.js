@@ -9,7 +9,7 @@ export const Navbar = () => {
 			<img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgKdFlDMA2TkrUQ8EiOkFz_uuXzuH781dNJw&usqp=CAU" alt="Logotipo da Empresa"/>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
+				<Link>
 					<div class="dropdown">
 						<button class="btn btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Favorites {store.Favorites.length}
@@ -18,10 +18,10 @@ export const Navbar = () => {
 							{store.Favorites.map(
 							(item,index)=> {
 							return(
-								<div>
+								<div  className="favorite-item">
 									<li>
 										<a class="dropdown-item" href="#">{item} 
-											<i className="fas fa-trash-alt"></i>
+											<i className="fas fa-trash-alt test" onClick={()=>actions.getDeleteFavorite(item)}></i>
 										</a>									
 									</li>
 								</div>

@@ -4,13 +4,25 @@
     overflow-y: hidden;
     flex-wrap: nowrap;
 }
+body{
+  background: black; 
+}
+.allCard{
+  background: black;
+  color: #c60b08;
+}
 .logo {
-  width: 60px;
+  width: 60;
   height:60px;
   margin-left: 50px;
 }
+.card d-flex{
+  width: 15rem;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
 .btn.btn-dark.dropdown-toggle {
-  margin-right: 100px;
+  margin-right: 250px;
 }
 
 .title{
@@ -38,15 +50,55 @@
   hr {
     border: 1px solid  #c60b08;
   }
-  
+  .cardWithMargin{
+    margin-right: 10px;
+  }
 
   .allInfo div {
-    margin-bottom: 10px; /* Espaço entre os elementos na vertical */
+    margin-bottom: 10px;
   }
   .allData {
     display: flex;
     flex-direction:column;
-    margin: 10px; /* Espaço entre a linha horizontal e os dados */
+    margin-right: 50px;
     align-items: center;
     color: #c60b08;
   }
+  .footerName{
+    font-weight: bold;
+  }
+  h2{
+    margin-bottom:none;
+    color: #c60b08; 
+  }
+  .container{
+    background: white;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  .black-button {
+    position: absolute;
+    right: 0;
+}
+
+  .favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.test {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  margin-top: 4px;
+  margin-left: 10px;
+}
